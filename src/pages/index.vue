@@ -1,4 +1,5 @@
 <template>
+  <MyHeader></MyHeader>
   <Welcome></Welcome>
 </template>
 

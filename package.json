@@ -16,6 +16,7 @@
     "core-js": "^3.37.1",
     "pnpm": "^9.15.0",
     "roboto-fontface": "*",
+    "vanilla-tilt": "^1.8.1",
     "vue": "^3.4.31",
     "vuetify": "^3.6.14"
   },
