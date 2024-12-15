@@ -24,7 +24,11 @@
             </v-col>
             <v-col class="d-flex flex-column" style="padding-bottom: 100px;">
                 <v-row>
-                    <h1>{{title}} <span class="release-year"> ({{ year }})</span></h1>
+                    <h1 style="width: 100%">{{title}} <span class="release-year"> ({{ year }})</span></h1>
+                    <br>
+                    <p style="display: flex; gap: 5px">
+                        <v-chip v-for="tag in tags" variant="outlined" color="primary"> {{ tag }} </v-chip>
+                    </p>
                     <p class="description">{{ description }}</p>
                 </v-row>
                 <v-row align-content="end">
@@ -54,6 +58,7 @@ export default {
         description: String,
         year: String,
         links: Array<{text: string, url: string, icon?: string}>,
+        tags: Array<String>,
     },
     mounted() {
         nextTick(() => {

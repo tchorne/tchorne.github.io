@@ -53,6 +53,7 @@ export default {
         description: String,
         year: String,
         links: Array<{text: string, url: string, icon?: string}>,
+        tags: Array<String>,
     },
     mounted() {
         nextTick(() => {

@@ -1,5 +1,6 @@
 <template>
     <v-container class="fill-height">
+        <h1 style="width: 100%; text-align: center;"> Projects </h1>
         <v-carousel hide-delimiter-background>
             <v-carousel-item v-for="item in carouselItems">
                 <main-carousel-item 
@@ -8,6 +9,7 @@
                     :year="item.year"
                     :description="item.description"
                     :links="item.links"
+                    :tags="item.tags"
                 />
             </v-carousel-item>
             <v-carousel-item>
@@ -17,6 +19,7 @@
                     :year="jamItem.year"
                     :description="jamItem.description"
                     :links="jamItem.links"
+                    :tags="jamItem.tags"
                 />
 
             </v-carousel-item>
@@ -36,6 +39,7 @@
 import nikochat from '@/assets/carouselgifs/nikochat.gif'
 import photochemistry from '@/assets/carouselgifs/photochemistry2.gif'
 import vanishingpoint from '@/assets/carouselgifs/vanishingpoint.gif'
+import compcon from '@/assets/carouselgifs/compcon.gif'
 import pilotdash from '@/assets/carouselgifs/pilotdash.gif'
 import phonymicropackers from '@/assets/carouselgifs/phonymacropackers.gif'
 import sandsgrowing from '@/assets/carouselgifs/sandsgrowing.gif'
@@ -58,7 +62,19 @@ const carouselItems = [
             {text: 'Game Jolt (Demo)', url: 'https://gamejolt.com/games/Photochemistry/902784', icon: GameJoltIcon},
             {text: 'itch.io (Jam Version)', url: 'https://tchorne.itch.io/photochemistry', icon: ItchIcon},
             {text: 'Gameplay Video', url: 'https://www.youtube.com/watch?v=fBQo1_YTMmc', icon: VideoIcon}
-        ]
+        ],
+        tags: ["Game", "Godot"]
+    },
+    { 
+        src: compcon,
+        title: 'COMP/CON ÁINE',
+        year: '2024',
+        description: 'A fork of the beautifully designed online compedium and character builder for the Lancer TTRPG developed using Vue. I expanded on the site with a 3D map and diagetic tools for my players to decode secret messages they recieve in game.',
+        links: [
+            {text: 'Live Site', url: 'http://thomashorne.ca:2434/#/map'},
+            {text: 'GitHub', url: 'https://github.com/tchorne/compcon-aine', icon: GitHubIcon}
+        ],
+        tags: ["Website", "Vue", "TypeScript"]
     },    
     {
         src: vanishingpoint,
@@ -66,18 +82,20 @@ const carouselItems = [
         year: '2024',
         description: 'A puzzle game about objects that stop existing when you look away. Utilizes various shader techniques for the stylized graphics and uses raytracing to implement the main mechanic.',
         links: [
-            {text: 'itch.io', url: 'https://itch.io/jam/cu-2024-february-game-jam/rate/2563969', icon: GitHubIcon},
+            {text: 'itch.io', url: 'https://itch.io/jam/cu-2024-february-game-jam/rate/2563969', icon: ItchIcon},
             {text: 'Gameplay Video', url: 'https://www.youtube.com/watch?v=qBooQuzO-Io', icon: VideoIcon}
-        ]
+        ],
+        tags: ["Game", "Godot"]
     },
     { 
         src: nikochat,
         title: 'NikoChat',
         year: '2023',
-        description: 'An expressive LLM-powered chat bot built using Python and Godot. An emotion classifier model allows it to display a number of expressions using custom user images. It utilizes vector storage for long-term retention, can connect to several AI services, and even integrates with Discord and Twitch.',
+        description: 'What good is a portfolio without a ChatGPT wrapper? NikoChat is an expressive LLM-powered chat bot built using Python and Godot. An emotion classifier model allows it to display a number of expressions using custom user images. It utilizes vector storage for long-term retention, can connect to several AI services, and even integrates with Discord and Twitch.',
         links: [
             {text: 'GitHub', url: 'https://github.com/tchorne/NikoChat', icon: GitHubIcon}
-        ]
+        ],
+        tags: ["Application", "Godot", "Python"]
     },
 ]
 const jamItem = {
@@ -85,7 +103,8 @@ const jamItem = {
         title: "Jam Projects",
         year: "Since 2018",
         description: "I’ve been participating in game development competitions for over 6 years now, both solo and in teams. With every project I try to experiment with new genres and techniques to expand my array of skills.",
-        links: [{text: 'itch.io', url: 'https://tchorne.itch.io/', icon: GitHubIcon},]
+        links: [{text: 'itch.io', url: 'https://tchorne.itch.io/', icon: ItchIcon},],
+        tags: ["Game", "Godot", "Unity"]
 }
 
 export default {
