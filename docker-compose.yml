@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  portfolio-vue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio-vue
+    restart: always
+    environment:
+      - VIRTUAL_HOST=thomashorne.ca
+      - LETSENCRYPT_HOST=thomashorne.ca
+      - LETSENCRYPT_EMAIL=support@thomashorne.ca
+    networks:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
